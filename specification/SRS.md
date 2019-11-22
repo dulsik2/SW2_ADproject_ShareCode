@@ -53,7 +53,7 @@
 <br/>
 
 ## 사용자 인터페이스 요구사항
-<img src="https://github.com/dulsik2/test/blob/master/img/1.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/1.jpg?raw=true" width="400px">
 
 >1. ID와 PW를 입력받는 에디트창
 >2. 로그인 버튼 > 예외 사항 발생 시 경고창 출력
@@ -61,14 +61,14 @@
 
 <br/>
 
-<img src="https://github.com/dulsik2/test/blob/master/img/2.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/2.jpg?raw=true" width="400px">
 
 >1. 사용자가 사용할 ID, PW, 별명을 입력받는 에디트창
 >2. 완료 버튼 > 예외 사항 발생 시 경고창 출력
 
 <br/>
 
-<img src="https://github.com/dulsik2/test/blob/master/img/3.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/3.jpg?raw=true" width="400px">
 
 >1. 정렬 기준 콤보 박스와 체크 버튼
 >2. 방 타이틀, 파일 수, 업로더 정보, 생성 날짜 표시
@@ -79,14 +79,14 @@
 <br/>
 
 
-<img src="https://github.com/dulsik2/test/blob/master/img/4.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/4.jpg?raw=true" width="400px">
 
 >1. 방 타이틀을 입력받는 에디트창
 >2. 완료 버튼 > 예외 사항 발생 시 경고창 출력
 
 <br/>
 
-<img src="https://github.com/dulsik2/test/blob/master/img/5.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/5.jpg?raw=true" width="400px">
 
 >1. 정렬 기준 콤보 박스와 체크 버튼
 >2. 파일 이름, "좋아요" 수, 업로더 정보, 생성 날짜 표시
@@ -96,13 +96,13 @@
 
 <br/>
 
-<img src="https://github.com/dulsik2/test/blob/master/img/6.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/6.jpg?raw=true" width="400px">
 
 >1. 파일 불러오기 창
 
 <br/>
 
-<img src="https://github.com/dulsik2/test/blob/master/img/7.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/7.jpg?raw=true" width="400px">
 
 >1. 파일 이름 출력
 >2. "좋아요" 버튼
