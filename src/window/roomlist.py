@@ -129,6 +129,15 @@ class RoomWindow(QWidget):
             print("방 생성을 하지 않았음.")
             return
 
+        # db에 해당 title이 이미 있는지 Check하고 할당
+        room_titles = []
+        for item in session.room_data:
+            room_titles.append(item[1])
+
+        if session.create_title in room_titles:
+            QMessageBox.about(self, "warning", "이미 있는 방입니다!")
+            return
+
         command = "insert into room(title, host_id, create_date) \
                     values(\'{}\', \'{}\', now());" .format(session.create_title, session.id)
         session.sql.insert(command)
@@ -246,20 +255,12 @@ class CreateRoomWindow(QDialog):
     def createButtonClicked(self):
         if len(self.titleEdit.text()) == 0:
             QMessageBox.about(self, "warning", "Title을 제대로 입력해주세요!")
+            session.create_title = "untitle"
             return
 
 
         session.create_title = self.titleEdit.text()
         print(session.create_title)
-
-        # db에 해당 title이 이미 있는지 Check하고 할당
-        room_titles = []
-        for item in session.room_data:
-            room_titles.append(item[1])
-
-        if session.create_title in room_titles:
-            QMessageBox.about(self, "warning", "이미 있는 방입니다!")
-            return
 
         self.close()
 
