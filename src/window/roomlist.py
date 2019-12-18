@@ -125,6 +125,9 @@ class RoomWindow(QWidget):
         self.createRoom = CreateRoomWindow()
         self.createRoom.exec_()
 
+        if session.create_title == "untitle":
+            print("방 생성을 하지 않았음.")
+            return
 
         command = "insert into room(title, host_id, create_date) \
                     values(\'{}\', \'{}\', now());" .format(session.create_title, session.id)
@@ -165,7 +168,7 @@ class RoomWindow(QWidget):
 
 
     def getRoomList(self, key="생성날짜"):
-        sort_key = "생성날짜"
+        sort_key = "upload_time"
 
         if key == "생성날짜":
             sort_key = "room.create_date"
