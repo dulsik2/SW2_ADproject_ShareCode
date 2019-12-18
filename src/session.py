@@ -3,7 +3,6 @@ from src.database import db_connect as db
 # 회원정보
 id = "seo5220"
 passwd = "ysy5220"
-nickname = "또용"
 
 # room 정보
 room_data = []

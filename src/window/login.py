@@ -149,13 +149,13 @@ class JoinMemberWindow(QDialog):
         h2_box.addWidget(pwLabel)
         h2_box.addWidget(self.pwEdit)
 
-        nicknameLabel = QLabel("별명: ")
-        self.nicknameEdit = QLineEdit()
-        self.nicknameEdit.setMaxLength(20)
-        self.nicknameEdit.setStyleSheet("width: 200px;height: 25px;")
-        h3_box = QHBoxLayout()
-        h3_box.addWidget(nicknameLabel)
-        h3_box.addWidget(self.nicknameEdit)
+        # nicknameLabel = QLabel("별명: ")
+        # self.nicknameEdit = QLineEdit()
+        # self.nicknameEdit.setMaxLength(20)
+        # self.nicknameEdit.setStyleSheet("width: 200px;height: 25px;")
+        # h3_box = QHBoxLayout()
+        # h3_box.addWidget(nicknameLabel)
+        # h3_box.addWidget(self.nicknameEdit)
 
 
 
@@ -169,7 +169,7 @@ class JoinMemberWindow(QDialog):
 
         main_vbox.addLayout(h1_box)
         main_vbox.addLayout(h2_box)
-        main_vbox.addLayout(h3_box)
+        # main_vbox.addLayout(h3_box)
         main_vbox.addLayout(h4_box)
 
 
@@ -194,10 +194,6 @@ class JoinMemberWindow(QDialog):
 
         id = self.idEdit.text()
         pw = self.pwEdit.text()
-        if len(self.nicknameEdit.text()) == 0:
-            nickname = "default"
-
-
 
 
         # 등록된 ID가 있는지 Check
@@ -206,7 +202,7 @@ class JoinMemberWindow(QDialog):
             return
 
         # 회원가입(insert)
-        self.joinMember(id, pw, nickname)
+        self.joinMember(id, pw)
         QMessageBox.about(self, "Pass", "회원가입되었습니다!")
         self.close()
 

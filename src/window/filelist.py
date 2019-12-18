@@ -221,7 +221,7 @@ class FileWindow(QWidget):
     def convertToBinaryData(self, fileName):
         binaryData = None
         # Convert digital data to binary format
-        with open(filename, 'rb') as file:
+        with open(fileName, 'rb') as file:
             binaryData = file.read()
 
         return binaryData
