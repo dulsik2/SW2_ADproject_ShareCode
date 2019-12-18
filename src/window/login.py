@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QLineEdit, QPushButton, QLabel, QMessageBox
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout
 
 from roomlist import *
-import session
+import src.session as session
 
 
 class LoginWindow(QWidget):

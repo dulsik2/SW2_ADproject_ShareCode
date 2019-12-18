@@ -5,8 +5,8 @@ from PyQt5.QtWidgets import QApplication, QWidget, QListWidget, QDialog
 from PyQt5.QtWidgets import QLineEdit, QPushButton, QLabel, QMessageBox, QComboBox, QListWidgetItem
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout
 
-import session
-from filelist import *
+import src.session as session
+from src.window.filelist import *
 
 class RoomWindow(QWidget):
 

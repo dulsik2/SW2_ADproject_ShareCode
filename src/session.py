@@ -1,4 +1,4 @@
-from database import db_connect as db
+from src.database import db_connect as db
 
 # 회원정보
 id = "seo5220"

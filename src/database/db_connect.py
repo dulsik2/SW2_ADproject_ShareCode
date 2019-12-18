@@ -40,8 +40,12 @@ class Sql:
         self.conn.commit()
 
     def insert_b(self, query, data):
-        self.cur.execute(query, data)
-        self.conn.commit()
+        try:
+            self.cur.execute(query, data)
+            self.conn.commit()
+
+        except Exception as e:
+            print(e)
 
     def delete(self, query):
         self.cur.execute(query)

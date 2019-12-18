@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QListWidget, QDialog, QFileDi
 from PyQt5.QtWidgets import QLineEdit, QPushButton, QLabel, QMessageBox, QComboBox, QListWidgetItem, QPlainTextEdit
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout
 
-import session
+import src.session as session
 import syntax
 
 
