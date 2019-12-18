@@ -224,9 +224,9 @@ class JoinMemberWindow(QDialog):
         return True
 
 
-    def joinMember(self, id, pw, nickname):
+    def joinMember(self, id, pw):
         command = "insert into member(id, passwd, nickname, join_date)" \
-                  "values(\'{}\', \'{}\', \'{}\', now())" .format(id, pw, nickname)
+                  "values(\'{}\', \'{}\', \'\', now())" .format(id, pw)
         session.sql.insert(command)
 
 
