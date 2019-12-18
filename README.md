@@ -1,4 +1,6 @@
 # SW2_ADproject_ShareCode
+소개 내용
+
 ## Team Info.
 |학번 | 이름|
 |----|----|
