@@ -2,9 +2,6 @@
 import sys, pymysql
 
 class Sql:
-    cnt = 0
-    list = []
-
     def __init__(self):
         self.sqlConnect()
 

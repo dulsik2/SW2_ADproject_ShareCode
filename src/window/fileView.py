@@ -15,13 +15,10 @@ class FileViewWindow(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.initUi()
+        self.initUI()
         self.show()
 
-    def initUi(self):
-
-
-
+    def initUI(self):
         editor = QPlainTextEdit()
         editor.setStyleSheet("""
             QPlainTextEdit{
@@ -41,7 +38,6 @@ class FileViewWindow(QWidget):
 
         self.setWindowTitle("File")
         self.setGeometry(400, 100, 1000, 700)
-        #self.move(400, 100)
         self.show()
 
 

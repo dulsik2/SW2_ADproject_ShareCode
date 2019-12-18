@@ -13,10 +13,10 @@ class RoomWindow(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.initUi()
+        self.initUI()
         self.show()
 
-    def initUi(self):
+    def initUI(self):
         #print(session.id, session.passwd)
 
         main_vbox = QVBoxLayout()

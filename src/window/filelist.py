@@ -14,10 +14,10 @@ class FileWindow(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-        self.initUi()
+        self.initUI()
         self.show()
 
-    def initUi(self):
+    def initUI(self):
         #print(session.id, session.passwd)
 
         main_vbox = QVBoxLayout()
@@ -182,7 +182,7 @@ class FileWindow(QWidget):
 
 
     def getFileList(self, key="생성날짜"):
-        sort_key = "생성날짜"
+        sort_key = "upload_time"
 
         if key == "생성날짜":
             sort_key = "upload_time"
@@ -218,7 +218,7 @@ class FileWindow(QWidget):
 
         return False
 
-    def convertToBinaryData(self, filename):
+    def convertToBinaryData(self, fileName):
         binaryData = None
         # Convert digital data to binary format
         with open(filename, 'rb') as file:
@@ -231,9 +231,9 @@ class FileWindow(QWidget):
 
 
 
-# 방목록
+# 파일목록
 class QCustomQWidget (QWidget):
-    def __init__ (self, parent = None):
+    def __init__ (self, parent=None):
         super(QCustomQWidget, self).__init__(parent)
 
         self.titleLabel = QLabel()
