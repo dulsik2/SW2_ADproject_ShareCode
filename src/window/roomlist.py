@@ -228,7 +228,7 @@ class CreateRoomWindow(QDialog):
 
         titleLabel = QLabel("title: ")
         self.titleEdit = QLineEdit()
-        self.titleEdit.setMaxLength(30)
+        self.titleEdit.setMaxLength(20)
         self.titleEdit.setStyleSheet("width: 200px;height: 25px;")
         h1_box = QHBoxLayout()
         h1_box.addWidget(titleLabel)
