@@ -9,18 +9,13 @@ import src.session as session
 from src.window.filelist import *
 
 class RoomWindow(QWidget):
-
     def __init__(self, parent=None):
         super().__init__(parent)
-
         self.initUI()
         self.show()
 
     def initUI(self):
-        #print(session.id, session.passwd)
-
         main_vbox = QVBoxLayout()
-
 
         sortLabel = QLabel("정렬: ")
         self.keyCombo = QComboBox()
@@ -54,13 +49,11 @@ class RoomWindow(QWidget):
             # Add QListWidgetItem into QListWidget
             self.listwidget.addItem(myQListWidgetItem)
             self.listwidget.setItemWidget(myQListWidgetItem, myQCustomQWidget)
-            #print(myQCustomQWidget.getTextTitle())
 
         h1_box = QHBoxLayout()
         h1_box.addWidget(self.listwidget)
         self.listwidget.doubleClicked.connect(self.listClicked)
         self.listwidget.setStyleSheet("font-size: 15px; width: 150px")
-
 
         self.deleteRoomButton = QPushButton("방 삭제")
         self.deleteRoomButton.setStyleSheet("color: red;width: 150px;height: 40px;")
@@ -80,7 +73,6 @@ class RoomWindow(QWidget):
         self.setLayout(main_vbox)
         self.setWindowTitle("Room")
         self.setGeometry(600, 250, 400, 500)
-
 
     def refreshList(self):
         self.listwidget.clear()
@@ -102,23 +94,18 @@ class RoomWindow(QWidget):
             self.listwidget.addItem(myQListWidgetItem)
             self.listwidget.setItemWidget(myQListWidgetItem, myQCustomQWidget)
 
-
     # DoubleClicked Event
     def listClicked(self):
         # 현재 선택된 row index 리턴
         idx = self.listwidget.currentRow()
-
         it = self.listwidget.currentItem()
         widget = self.listwidget.itemWidget(it)
-
 
         session.room_id = session.room_data[idx][0]
         session.title = session.room_data[idx][1]
 
         self.file = FileWindow()
         self.file.show()
-
-
 
     def makeRoomButtonClicked(self):
         # CreateRoomWindow에서 insert문을 날린다.
@@ -155,8 +142,6 @@ class RoomWindow(QWidget):
             QMessageBox.about(self, "warning", "당신은 방 주인이 아닙니다!")
             return
 
-
-
         room_id = session.room_data[idx][0]
         command = """
             delete room, file
@@ -166,18 +151,15 @@ class RoomWindow(QWidget):
         """ .format(room_id)
         session.sql.delete(command)
         session.room_data = self.getRoomList(self.keyCombo.currentText())
-
         self.refreshList()
-
 
     # Combobox 변경되었을 때
     def changeCombobox(self):
         session.room_data = self.getRoomList(self.keyCombo.currentText())
         self.refreshList()
 
-
     def getRoomList(self, key="생성날짜"):
-        sort_key = "upload_time"
+        sort_key = "room.create_date"
 
         if key == "생성날짜":
             sort_key = "room.create_date"
@@ -194,7 +176,6 @@ class RoomWindow(QWidget):
 
         rs = session.sql.select(command)
         data = []
-
         for i in range(len(rs)):
             tmp = []
             for j in range(len(rs[i])):
@@ -208,23 +189,15 @@ class RoomWindow(QWidget):
 
 
 
-
-
-
 # 새로운 방만들기 창
 class CreateRoomWindow(QDialog):
-
     def __init__(self, parent=None):
         super().__init__(parent)
-
         self.initUi()
         self.show()
 
     def initUi(self):
-        # print(login_info.id, login_info.passwd)
-
         main_vbox = QVBoxLayout()
-
 
         titleLabel = QLabel("title: ")
         self.titleEdit = QLineEdit()
@@ -241,16 +214,11 @@ class CreateRoomWindow(QDialog):
         h2_box.addStretch(1)
         h2_box.addWidget(self.createButton)
 
-
         main_vbox.addLayout(h1_box)
         main_vbox.addLayout(h2_box)
-
-
-
         self.setLayout(main_vbox)
         self.setWindowTitle("Room")
         self.setGeometry(600, 250, 250, 150)
-
 
     def createButtonClicked(self):
         if len(self.titleEdit.text()) == 0:
@@ -258,10 +226,8 @@ class CreateRoomWindow(QDialog):
             session.create_title = "untitle"
             return
 
-
         session.create_title = self.titleEdit.text()
         print(session.create_title)
-
         self.close()
 
 
@@ -286,9 +252,7 @@ class QCustomQWidget (QWidget):
         self.allQHBoxLayout.addWidget(self.cntLabel)
         self.allQHBoxLayout.addWidget(self.dateLabel)
         self.allQHBoxLayout.addWidget(self.hostLabel)
-
         self.setLayout(self.allQHBoxLayout)
-
 
     def setTextTitle (self, text):
         self.titleLabel.setText(text)

@@ -9,12 +9,9 @@ from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout
 import src.session as session
 import syntax
 
-
 class FileViewWindow(QWidget):
-
     def __init__(self, parent=None):
         super().__init__(parent)
-
         self.initUI()
         self.show()
 
@@ -35,7 +32,6 @@ class FileViewWindow(QWidget):
         main_vbox.setContentsMargins(0, 0, 0, 0)
         main_vbox.addWidget(editor)
         self.setLayout(main_vbox)
-
         self.setWindowTitle("File")
         self.setGeometry(400, 100, 1000, 700)
         self.show()

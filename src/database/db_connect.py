@@ -21,16 +21,11 @@ class Sql:
         print("연결 성공!")
         self.cur = self.conn.cursor()
 
-
-
     def select(self, query):
         self.cur.execute(query)
         self.conn.commit()
-
         rs = self.cur.fetchall()
-
         return rs
-
 
     def insert(self, query):
         self.cur.execute(query)
@@ -40,14 +35,12 @@ class Sql:
         try:
             self.cur.execute(query, data)
             self.conn.commit()
-
         except Exception as e:
             print(e)
 
     def delete(self, query):
         self.cur.execute(query)
         self.conn.commit()
-
 
     def update(self, query):
         self.cur.execute(query)
@@ -57,12 +50,10 @@ class Sql:
         self.cur.execute(query, data)
         self.conn.commit()
 
-
-
-
 if __name__  == "__main__":
     sql = Sql()
     rs = sql.select("select * from member;")
 
     for i in range(len(rs)):
         print(rs[i])
+

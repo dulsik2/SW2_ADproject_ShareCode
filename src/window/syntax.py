@@ -22,9 +22,7 @@ def format(color, style=''):
 
     return _format
 
-
 # Syntax styles that can be shared by all languages
-
 STYLES = {
     'keyword': format([200, 120, 50], 'bold'),
     'operator': format([150, 150, 150]),
@@ -39,11 +37,7 @@ STYLES = {
 
 
 class PythonHighlighter(QSyntaxHighlighter):
-    """Syntax highlighter for the Python language.
-    """
     # Python keywords
-
-
     keywords = [
         'and', 'assert', 'break', 'class', 'continue', 'def',
         'del', 'elif', 'else', 'except', 'exec', 'finally',

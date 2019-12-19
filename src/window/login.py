@@ -11,17 +11,13 @@ import src.session as session
 
 
 class LoginWindow(QWidget):
-
     def __init__(self, parent=None):
         super().__init__(parent)
-
         self.initUI()
         self.show()
 
-
     def initUI(self):
         main_vbox = QVBoxLayout()
-
         id_label = QLabel("ID: ")
         self.idEdit = QLineEdit()
         self.idEdit.setStyleSheet("width: 150px;height: 25px;")
@@ -70,15 +66,12 @@ class LoginWindow(QWidget):
         if e.key() in [Qt.Key_Return, Qt.Key_Enter]:
             self.loginButtonClicked()
 
-
-
     def loginButtonClicked(self):
         sender = self.sender()
 
         if len(self.idEdit.text()) == 0 or len(self.pwEdit.text()) == 0:
             QMessageBox.about(self, "warning", "ID/PW 제대로 입력해주세요!")
             return
-
 
         # 회원인지 check
         id = self.idEdit.text()
@@ -88,15 +81,12 @@ class LoginWindow(QWidget):
             QMessageBox.about(self, "warning", "등록된 회원이 아닙니다!")
             return
 
-
         session.id = id
         session.passwd = pw
 
         self.room = RoomWindow()
         self.room.show()
-
         self.close()
-
 
     # 등록된 회원인지 아닌지 Check
     def isMember(self, id, pw):
@@ -105,31 +95,22 @@ class LoginWindow(QWidget):
 
         if len(rs) == 0:
             return False
-
         return True
-
 
     def joinButtonClicked(self):
         self.joinWindow = JoinMemberWindow()
         self.joinWindow.exec_()
 
 
-
-
 # 새로운 방만들기 창
 class JoinMemberWindow(QDialog):
-
     def __init__(self, parent=None):
         super().__init__(parent)
-
         self.initUi()
         self.show()
 
     def initUi(self):
-        # print(login_info.id, login_info.passwd)
-
         main_vbox = QVBoxLayout()
-
 
         idLabel = QLabel("ID: ")
         self.idEdit = QLineEdit()
@@ -138,7 +119,6 @@ class JoinMemberWindow(QDialog):
         h1_box = QHBoxLayout()
         h1_box.addWidget(idLabel)
         h1_box.addWidget(self.idEdit)
-
 
         pwLabel = QLabel("PW: ")
         self.pwEdit = QLineEdit()
@@ -149,16 +129,6 @@ class JoinMemberWindow(QDialog):
         h2_box.addWidget(pwLabel)
         h2_box.addWidget(self.pwEdit)
 
-        # nicknameLabel = QLabel("별명: ")
-        # self.nicknameEdit = QLineEdit()
-        # self.nicknameEdit.setMaxLength(20)
-        # self.nicknameEdit.setStyleSheet("width: 200px;height: 25px;")
-        # h3_box = QHBoxLayout()
-        # h3_box.addWidget(nicknameLabel)
-        # h3_box.addWidget(self.nicknameEdit)
-
-
-
         self.createButton = QPushButton("생성")
         self.createButton.setStyleSheet("width: 100px;height: 30px;")
         self.createButton.clicked.connect(self.createButtonClicked)
@@ -166,24 +136,18 @@ class JoinMemberWindow(QDialog):
         h4_box.addStretch(1)
         h4_box.addWidget(self.createButton)
 
-
         main_vbox.addLayout(h1_box)
         main_vbox.addLayout(h2_box)
-        # main_vbox.addLayout(h3_box)
         main_vbox.addLayout(h4_box)
-
-
 
         self.setLayout(main_vbox)
         self.setWindowTitle("Room")
         self.setGeometry(600, 250, 250, 150)
 
-
     # Enter Event > 회원가입으로 연결
     def keyPressEvent(self, e):
         if e.key() in [Qt.Key_Return, Qt.Key_Enter]:
             self.createButtonClicked()
-
 
     def createButtonClicked(self):
         id, pw, nickname = "", "", ""
@@ -195,7 +159,6 @@ class JoinMemberWindow(QDialog):
         id = self.idEdit.text()
         pw = self.pwEdit.text()
 
-
         # 등록된 ID가 있는지 Check
         if self.isinMember(id):
             QMessageBox.about(self, "warning", "이미 등록된 ID 입니다!")
@@ -206,9 +169,6 @@ class JoinMemberWindow(QDialog):
         QMessageBox.about(self, "Pass", "회원가입되었습니다!")
         self.close()
 
-
-
-
     # 등록된 아이디가 있는지 Check
     def isinMember(self, id):
         command = "select * from member where id=\'{}\'".format(id)
@@ -216,15 +176,12 @@ class JoinMemberWindow(QDialog):
 
         if len(rs) == 0:
             return False
-
         return True
-
 
     def joinMember(self, id, pw):
         command = "insert into member(id, passwd, nickname, join_date)" \
                   "values(\'{}\', \'{}\', \'\', now())" .format(id, pw)
         session.sql.insert(command)
-
 
 
 

@@ -1,4 +1,3 @@
-
 import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QWidget, QListWidget, QDialog, QFileDialog
@@ -10,7 +9,6 @@ import syntax
 from fileView import *
 
 class FileWindow(QWidget):
-
     def __init__(self, parent=None):
         super().__init__(parent)
 
@@ -18,10 +16,7 @@ class FileWindow(QWidget):
         self.show()
 
     def initUI(self):
-        #print(session.id, session.passwd)
-
         main_vbox = QVBoxLayout()
-
 
         sortLabel = QLabel("정렬: ")
         self.keyCombo = QComboBox()
@@ -61,7 +56,6 @@ class FileWindow(QWidget):
         self.listwidget.doubleClicked.connect(self.listClicked)
         self.listwidget.setStyleSheet("font-size: 15px; width: 150px")
 
-
         self.deleteFileButton = QPushButton("파일 삭제")
         self.deleteFileButton.setStyleSheet("color: red;width: 150px;height: 40px;")
         self.deleteFileButton.clicked.connect(self.deleteFileButtonClicked)
@@ -79,8 +73,6 @@ class FileWindow(QWidget):
         self.setLayout(main_vbox)
         self.setWindowTitle("File")
         self.setGeometry(600, 250, 600, 500)
-
-
 
     def refreshList(self):
         self.listwidget.clear()
@@ -102,8 +94,6 @@ class FileWindow(QWidget):
             self.listwidget.addItem(myQListWidgetItem)
             self.listwidget.setItemWidget(myQListWidgetItem, myQCustomQWidget)
 
-
-
     # DoubleClicked Event
     def listClicked(self):
         # 현재 선택된 row index 리턴
@@ -113,8 +103,6 @@ class FileWindow(QWidget):
 
         self.fileview = FileViewWindow()
         self.fileview.show()
-
-
 
     # uploadFileButton
     def uploadFileButtonClicked(self):
@@ -143,17 +131,12 @@ class FileWindow(QWidget):
                     insert into file(file_name, upload_id, contents, upload_time, room_id, like1)
                     values(%s, %s, %s, now(), %s, 0)
             """
-            # command = "insert into file(file_name, upload_id, contents, upload_time, room_id, like1) \
-            #                     values(\'{}\', \'{}\', {}, now(), \'{}\', 0);" \
-            #           .format(fileName, session.id, self.convertToBinaryData(filePath), session.room_id)
             insert_data = (fileName, session.id, self.convertToBinaryData(filePath), session.room_id)
             session.sql.insert_b(command, insert_data)
 
         session.file_data = self.getFileList(self.keyCombo.currentText())
 
         self.refreshList()
-
-
 
     # deleteFileButton
     def deleteFileButtonClicked(self):
@@ -179,8 +162,6 @@ class FileWindow(QWidget):
         session.file_data = self.getFileList(self.keyCombo.currentText())
         self.refreshList()
 
-
-
     def getFileList(self, key="생성날짜"):
         sort_key = "upload_time"
 
@@ -188,8 +169,6 @@ class FileWindow(QWidget):
             sort_key = "upload_time"
         elif key == "파일명":
             sort_key = "file_name"
-        elif key == "좋아요 수":
-            sort_key = "like1"
 
         command = "select file_name, upload_id, CONVERT(contents using utf8), upload_time, like1, file_id \
                     from file \
@@ -227,10 +206,6 @@ class FileWindow(QWidget):
         return binaryData
 
 
-
-
-
-
 # 파일목록
 class QCustomQWidget (QWidget):
     def __init__ (self, parent=None):
@@ -252,9 +227,7 @@ class QCustomQWidget (QWidget):
         self.allQHBoxLayout.addWidget(self.cntLabel)
         self.allQHBoxLayout.addWidget(self.dateLabel)
         self.allQHBoxLayout.addWidget(self.hostLabel)
-
         self.setLayout(self.allQHBoxLayout)
-
 
     def setTextTitle (self, text):
         self.titleLabel.setText(text)
