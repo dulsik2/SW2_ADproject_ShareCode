@@ -46,7 +46,7 @@
 <br/>
 
 ## 사용자 인터페이스 요구사항
-<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/1.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/docs/img/1.jpg?raw=true" width="400px">
 
 >1. ID와 PW를 입력받는 에디트창
 >2. 로그인 버튼 > 예외 사항 발생 시 경고창 출력
@@ -54,14 +54,14 @@
 
 <br/>
 
-<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/2.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/docs/img/2.jpg?raw=true" width="400px">
 
 >1. 사용자가 사용할 ID, PW을 입력받는 에디트창
 >2. 완료 버튼 > 예외 사항 발생 시 경고창 출력
 
 <br/>
 
-<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/3.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/docs/img/3.jpg?raw=true" width="400px">
 
 >1. 정렬 기준 콤보 박스
 >2. 방 타이틀, 파일 수, 업로더 정보, 생성 날짜 표시
@@ -72,14 +72,14 @@
 <br/>
 
 
-<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/4.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/docs/img/4.jpg?raw=true" width="400px">
 
 >1. 방 타이틀을 입력받는 에디트창
 >2. 완료 버튼 > 예외 사항 발생 시 경고창 출력
 
 <br/>
 
-<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/5.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/docs/img/5.jpg?raw=true" width="400px">
 
 >1. 정렬 기준 콤보 박스
 >2. 파일 이름, 업로더 정보, 생성 날짜 표시
@@ -89,13 +89,13 @@
 
 <br/>
 
-<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/6.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/docs/img/6.jpg?raw=true" width="400px">
 
 >1. 파일 불러오기 창
 
 <br/>
 
-<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/specification/img/7.jpg?raw=true" width="400px">
+<img src="https://github.com/dulsik2/SW2_ADproject_ShareCode/blob/master/docs/img/7.jpg?raw=true" width="400px">
 
 >1. 파일 이름 출력
 >2. 파이썬 문법 기준으로 하이라이팅된 텍스트 출력
